@@ -1,5 +1,6 @@
 from utils.driver_manager import AppiumDriverManager
 from pages.page_factory import PageFactory
+from locators.home_page_locators import HomePageLocators
 from decouple import config
 
 driver = AppiumDriverManager.get_driver()
@@ -15,4 +16,4 @@ def test_successful_login():
 
     home_page = page_factory.get_home_page()
     # if strings match, login was successful
-    assert (home_page.get_cover_item_poster() == "hr.hrt.hrti:id/cover_item_poster")
+    assert (home_page.get_cover_item_poster() == HomePageLocators.COVER_ITEM_POSTER)
